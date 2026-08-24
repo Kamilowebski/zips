@@ -70,14 +70,6 @@
         </select>
       </label>
       <label>
-        Kod zakładu
-        <input id="siteCodeFilter" placeholder="np. 104">
-      </label>
-      <label>
-        Numer
-        <input id="numberFilter" placeholder="np. 0192">
-      </label>
-      <label>
         Słowo kluczowe
         <input id="keywordFilter" placeholder="np. etykiety">
       </label>
@@ -141,11 +133,10 @@
         </div>
         <div class="formActions">
           <button type="submit" class="primary">Dodaj / aktualizuj</button>
-          <input id="adminPassword" type="password" placeholder="Hasło admina">
-          <span class="sessionHint">hasło zapamiętane w tej karcie przeglądarki</span>
           <button id="saveButton" type="button">Zapisz zmiany</button>
           <button type="button" id="deleteEditButton" class="danger hidden">Usuń edytowane</button>
           <button type="button" id="clearFormButton">Wyczyść</button>
+          <button type="button" id="forgetPasswordButton" class="linkButton">Zmień hasło zapisu</button>
           <span id="editHint" class="muted"></span>
         </div>
       </form>
@@ -219,6 +210,20 @@
       </div>
     </section>
   </main>
+
+  <div id="passwordModal" class="modalOverlay hidden">
+    <div class="modalBox">
+      <h3>Hasło administratora</h3>
+      <p class="muted">Wymagane do zapisu zmian w pliku na dysku. Zostanie zapamiętane w tej karcie przeglądarki do jej zamknięcia.</p>
+      <form id="passwordForm">
+        <input id="passwordModalInput" type="password" placeholder="Hasło" autocomplete="current-password">
+        <div class="modalActions">
+          <button type="button" id="passwordModalCancel">Anuluj</button>
+          <button type="submit" class="primary">Potwierdź</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="/static/app.js"></script>
 </body>
